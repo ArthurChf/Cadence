@@ -1,5 +1,6 @@
 import { Route } from '#/enums/Route';
 import AppLayout from '#/layouts/AppLayout.vue';
+import Program from '#/views/Program.vue';
 import Today from '#/views/Today.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -10,6 +11,14 @@ const router = createRouter({
             path: Route.TODAY,
             alias: '/',
             component: Today,
+            meta: {
+                layout: AppLayout
+            }
+        },
+        {
+            path: Route.PROGRAM,
+            alias: '/',
+            component: Program,
             meta: {
                 layout: AppLayout
             }

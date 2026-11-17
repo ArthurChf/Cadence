@@ -11,6 +11,12 @@
 
     --color-primary: #276CF0;
     --color-primary-hover: #2773ff;
+
+    --color-nav-border: #191919;
+    --color-nav-item: #989aae;
+    --color-nav-item-label-active: var(--color-foreground);
+    --color-nav-item-icon-active: var(--color-primary);
+    --color-nav-item-bg-active: #1C1C1E;
 }
 
 /***************************** DARK THEME *****************************/
@@ -18,7 +24,7 @@
 @theme {
     --color-*: initial;
 
-    --color-background: #171929;
+    --color-background: #000000;
     --color-foreground: #E3E6FC;
     --color-ring: #276CF0;
 
@@ -28,4 +34,10 @@
 
     --color-primary: #276CF0;
     --color-primary-hover: #2773ff;
+
+    --color-nav-border: #191919;
+    --color-nav-item: #989aae;
+    --color-nav-item-label-active: var(--color-foreground);
+    --color-nav-item-icon-active: #5B9BFF;
+    --color-nav-item-bg-active: #1C1C1E;
 }

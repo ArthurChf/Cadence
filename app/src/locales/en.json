@@ -5,6 +5,15 @@
             "actions": {
                 "startSession": "Start the session"
             }
+        },
+        "program": {
+            "title": "Program"
+        },
+        "progress": {
+            "title": "Progress"
+        },
+        "settings": {
+            "title": "Settings"
         }
     }
 }

@@ -45,11 +45,15 @@
     }
 
     #app {
-        @apply h-dvh;
+        @apply h-dvh select-none;
     }
 
     body {
         @apply font-sans font-normal text-md text-foreground bg-background;
+    }
+
+    [inert] {
+        @apply opacity-50;
     }
 
     * {

@@ -8,3 +8,9 @@ export type Size =
     | 'lg'
     | 'xl'
     | 'full';
+
+export type IconName =
+    'dumbbell'
+    | 'calendar-days'
+    | 'chart-column'
+    | 'settings';

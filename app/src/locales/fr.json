@@ -5,6 +5,15 @@
             "actions": {
                 "startSession": "Démarrer la séance"
             }
+        },
+        "program": {
+            "title": "Programme"
+        },
+        "progress": {
+            "title": "Progression"
+        },
+        "settings": {
+            "title": "Réglages"
         }
     }
 }

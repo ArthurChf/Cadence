@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="cursor-pointer transition-[background_color] rounded-lg w-fit px-8 py-4 font-semibold" :class="variants[variant]" @click="emit('click')">{{ text }}</button>
+    <button type="button" class="cursor-pointer transition-[background-color] rounded-lg w-fit px-8 py-4 font-semibold" :class="variants[variant]" @click="emit('click')">{{ text }}</button>
 </template>
 
 <script setup lang="ts">
