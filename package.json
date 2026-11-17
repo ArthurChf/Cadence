@@ -1,0 +1,23 @@
+{
+    "name": "cadence",
+    "version": "0.1.0",
+    "private": true,
+    "workspaces": [
+        "shared",
+        "app",
+        "api"
+    ],
+    "scripts": {
+        "build": "npm run --workspaces --if-present build",
+        "lint": "npm run --workspaces --if-present lint",
+        "lint:fix": "npm run --workspaces --if-present lint:fix",
+        "typecheck": "npm run --workspaces --if-present typecheck",
+        "dev:app": "npm run -w @cadence/app dev"
+    },
+    "devDependencies": {
+        "@stylistic/eslint-plugin": "^6.0.0",
+        "eslint": "^10.15.0",
+        "globals": "^17.14.0",
+        "typescript-eslint": "^8.73.0"
+    }
+}

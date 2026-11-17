@@ -1,0 +1,10 @@
+{
+    "pages": {
+        "today": {
+            "title": "Today",
+            "actions": {
+                "startSession": "Start the session"
+            }
+        }
+    }
+}

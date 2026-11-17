@@ -1,0 +1,27 @@
+{
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "types": [
+            "vite/client"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ],
+            "#shared/*": [
+                "../shared/src/*"
+            ]
+        }
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.vue"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}

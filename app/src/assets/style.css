@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./theme.css";
+
+@theme {
+    --font-*: initial;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    --text-*: initial;
+    --text-xs: 1.2rem;
+    --text-sm: 1.3rem;
+    --text-md: 1.4rem;
+    --text-lg: 1.55rem;
+    --text-xl: 1.65rem;
+
+    --radius-*: initial;
+    --radius-xs: 0.1rem;
+    --radius-sm: 0.3rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.6rem;
+    --radius-xl: 1rem;
+    --radius-full: 5rem;
+
+    --border-*: initial;
+    --border: 0.1rem;
+
+    --size-*: initial;
+    --size-xs: 1.8rem;
+    --size-sm: 2rem;
+    --size-md: 2.5rem;
+    --size-lg: 3rem;
+    --size-xl: 4rem;
+    --size-full: 100%;
+
+    --width-xs: 10rem;
+    --width-sm: 13rem;
+    --width-md: 16rem;
+    --width-lg: 19rem;
+    --width-xl: 22rem;
+}
+
+@layer base {
+    :root {
+        font-size: 62.5%;
+    }
+
+    #app {
+        @apply h-dvh;
+    }
+
+    body {
+        @apply font-sans font-normal text-md text-foreground bg-background;
+    }
+
+    * {
+        @apply box-border outline-none ring-ring focus-visible:ring-2;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-scrollbar-thumb;
+    }
+
+    ::-webkit-scrollbar-thumb:hover,
+    ::-webkit-scrollbar-thumb:active {
+        @apply bg-scrollbar-thumb-hover-active;
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track:hover,
+    ::-webkit-scrollbar-track:active {
+        @apply bg-scrollbar-track-hover-active;
+    }
+
+    .animate-loader-circular-rotate {
+        animation: animation-loader-circular-rotate 1s linear infinite;
+    }
+
+    .loader-circular-shape {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        animation: animation-loader-circular-turn 1.4s ease-in-out infinite;
+    }
+
+    @keyframes animation-loader-circular-rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes animation-loader-circular-turn {
+        0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+        }
+
+        50% {
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -35;
+        }
+
+        100% {
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -124;
+        }
+    }
+}

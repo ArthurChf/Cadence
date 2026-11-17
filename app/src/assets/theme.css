@@ -1,0 +1,31 @@
+/***************************** LIGHT THEME *****************************/
+
+.light-theme {
+    --color-background: #FEFFFF;
+    --color-foreground: #01030B;
+    --color-ring: #276CF0;
+
+    --color-scrollbar-thumb: #E6E7EE;
+    --color-scrollbar-thumb-hover-active: #DCDDE4;
+    --color-scrollbar-track-hover-active: #F7F8FF;
+
+    --color-primary: #276CF0;
+    --color-primary-hover: #2773ff;
+}
+
+/***************************** DARK THEME *****************************/
+
+@theme {
+    --color-*: initial;
+
+    --color-background: #171929;
+    --color-foreground: #E3E6FC;
+    --color-ring: #276CF0;
+
+    --color-scrollbar-thumb: #343649;
+    --color-scrollbar-thumb-hover-active: #3F4153;
+    --color-scrollbar-track-hover-active: #1E2031;
+
+    --color-primary: #276CF0;
+    --color-primary-hover: #2773ff;
+}

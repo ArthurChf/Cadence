@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "noEmit": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true
+    }
+}
