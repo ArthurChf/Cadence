@@ -3,8 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonVariant } from '#/types/ui';
 import { tw } from '#/utils/tailwindcss';
+
+type ButtonVariant =
+    'primary';
 
 const { variant = 'primary' } = defineProps<{
     text: string;

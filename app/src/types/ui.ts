@@ -1,6 +1,3 @@
-export type ButtonVariant =
-    'primary';
-
 export type Size =
     'xs'
     | 'sm'

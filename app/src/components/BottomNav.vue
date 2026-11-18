@@ -23,7 +23,6 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import BaseIcon from './base/BaseIcon.vue';
 
-
 const { t } = useTranslation();
 
 type NavItem = {
