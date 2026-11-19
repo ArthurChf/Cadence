@@ -9,7 +9,6 @@ const router = createRouter({
     routes: [
         {
             path: Route.TODAY,
-            alias: '/',
             component: Today,
             meta: {
                 layout: AppLayout
@@ -17,7 +16,6 @@ const router = createRouter({
         },
         {
             path: Route.PROGRAM,
-            alias: '/',
             component: Program,
             meta: {
                 layout: AppLayout

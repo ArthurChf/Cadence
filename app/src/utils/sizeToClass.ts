@@ -7,8 +7,7 @@ export function sizeToClass(size: Size, widthClass = false) {
             sm: 'w-sm',
             md: 'w-md',
             lg: 'w-lg',
-            xl: 'w-xl',
-            full: 'w-full'
+            xl: 'w-xl'
         }[size];
     }
 
@@ -17,7 +16,6 @@ export function sizeToClass(size: Size, widthClass = false) {
         sm: 'size-sm',
         md: 'size-md',
         lg: 'size-lg',
-        xl: 'size-xl',
-        full: 'size-full'
+        xl: 'size-xl'
     }[size];
 }

@@ -1,16 +1,16 @@
 <template>
-    <nav class="flex justify-evenly items-center border-t border-nav-border py-4">
+    <nav class="flex justify-evenly items-center border-t border-nav-border">
         <RouterLink
             v-for="item in navItems"
             :key="item.route"
-            class="flex flex-col items-center gap-1 transition active:bg-nav-item-bg-active focus:bg-nav-item-bg-active rounded-lg px-4 py-3"
+            class="group flex flex-col items-center gap-2 transition active:text-nav-item-label-active px-4 py-5"
             :class="item.route === route.path ? 'text-nav-item-label-active' : 'text-nav-item'"
             :to="item.route"
             :inert="item.disabled"
             @contextmenu.prevent
         >
-            <BaseIcon :name="item.icon" size="sm" class="transition-[color]" :class="item.route === route.path && 'text-nav-item-icon-active'" />
-            <span>{{ item.label }}</span>
+            <BaseIcon :name="item.icon" size="md" class="transition-[color] group-active:text-nav-item-icon-active" :class="item.route === route.path && 'text-nav-item-icon-active'" />
+            <span class="font-medium text-sm">{{ item.label }}</span>
         </RouterLink>
     </nav>
 </template>

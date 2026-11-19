@@ -12,6 +12,7 @@
         "typecheck": "vue-tsc --noEmit"
     },
     "dependencies": {
+        "date-fns": "^4.4.0",
         "dexie": "^4.4.7",
         "pinia": "^4.1.0",
         "tailwindcss": "^4.3.5",

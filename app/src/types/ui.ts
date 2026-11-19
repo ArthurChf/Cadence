@@ -3,11 +3,13 @@ export type Size =
     | 'sm'
     | 'md'
     | 'lg'
-    | 'xl'
-    | 'full';
+    | 'xl';
 
 export type IconName =
     'dumbbell'
     | 'calendar-days'
     | 'chart-column'
-    | 'settings';
+    | 'settings'
+    | 'chevron-right'
+    | 'plus'
+    | 'x';

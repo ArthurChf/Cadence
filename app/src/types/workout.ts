@@ -7,7 +7,7 @@ type Timestamp = number;
  *
  * 7 = Sunday
  */
-type Day = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type Day = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 type SetValues = {
     repetitions: number | null;

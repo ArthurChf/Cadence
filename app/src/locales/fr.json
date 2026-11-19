@@ -7,7 +7,13 @@
             }
         },
         "program": {
-            "title": "Programme"
+            "title": "Programme",
+            "card": {
+                "rest": "Repos",
+                "assign": "Assigner",
+                "nbExercises": "Aucun exercice | {n} exercice | {n} exercices"
+            },
+            "createSession": "Créer une séance"
         },
         "progress": {
             "title": "Progression"
@@ -15,5 +21,17 @@
         "settings": {
             "title": "Réglages"
         }
+    },
+    "common": {
+        "day": {
+            "1": "Lundi",
+            "2": "Mardi",
+            "3": "Mercredi",
+            "4": "Jeudi",
+            "5": "Vendredi",
+            "6": "Samedi",
+            "7": "Dimanche"
+        },
+        "today": "Aujourd'hui"
     }
 }
