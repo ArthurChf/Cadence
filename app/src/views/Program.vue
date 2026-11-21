@@ -1,16 +1,9 @@
 <template>
-    <BaseBottomSheet v-model:open="isBottomSheetOpen" detent="lg">
-        <template #title>{{ t('pages.program.createSession') }}</template>
-        <template #subtitle>{{ t('pages.program.title') }}</template>
-        <template #content>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure tenetur, eveniet saepe fugiat rem, unde quam tempora porro ut maxime nulla! Delectus, dicta molestias. Minus quasi repellat ratione cum nam.
-        </template>
-    </BaseBottomSheet>
+    <CreatePlannedSessionBottomSheet v-model:open="isCreatePlannedSessionBottomSheetOpen" />
 
     <div class="sticky top-0 py-10 bg-background">
         <h1>{{ t('pages.program.title') }}</h1>
     </div>
-
     <div class="flex flex-col items-stretch gap-5">
         <template v-for="card in programCards" :key="card.day">
             <BaseCard v-if="card.variant === 'assigned'" variant="link" @click="onCardClick(card)">
@@ -47,24 +40,23 @@
             </div>
         </template>
 
-        <BaseButton variant="secondary" icon="plus" :text="t('pages.program.createSession')" @click="isBottomSheetOpen = true" />
+        <BaseButton variant="secondary" icon="plus" :text="t('pages.program.createSession')" @click="isCreatePlannedSessionBottomSheetOpen = true" />
     </div>
 </template>
 
 <script setup lang="ts">
-import BaseBottomSheet from '#/components/base/BaseBottomSheet.vue';
 import BaseButton from '#/components/base/BaseButton.vue';
 import BaseCard from '#/components/base/BaseCard.vue';
 import BaseIcon from '#/components/base/BaseIcon.vue';
-
+import CreatePlannedSessionBottomSheet from '#/components/program/CreatePlannedSessionBottomSheet.vue';
 import { useTranslation } from '#/composables/useTranslation';
-import type { Day, PlannedSession } from '#/types/workout';
+import type { Day, PlannedSession } from '#/types/program';
 import { getDay } from 'date-fns';
 import { ref } from 'vue';
 
 const { t } = useTranslation();
 
-const isBottomSheetOpen = ref(false);
+const isCreatePlannedSessionBottomSheetOpen = ref(false);
 
 type ProgramCard = {
     day: Day;

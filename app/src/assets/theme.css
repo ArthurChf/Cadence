@@ -1,6 +1,7 @@
 /***************************** LIGHT THEME *****************************/
 
 .light-theme {
+    --color-background: #000;
     /* TODO */
 }
 
@@ -14,6 +15,7 @@
     --color-ring: #276CF0;
 
     --color-title: #FFFFFF;
+    --color-danger: #FF453A;
 
     --color-scrollbar-thumb: #343649;
     --color-scrollbar-thumb-hover-active: #3F4153;
@@ -46,4 +48,9 @@
     --color-bottom-sheet-close-bg: #2A2A2D;
     --color-bottom-sheet-close-bg-active: #39393d;
     --color-bottom-sheet-grabber: #3A3A3E;
+
+    --color-input-bg: #1C1C1E;
+    --color-input-fg: #FFFFFF;
+    --color-input-border: #2A2A2D;
+    --color-input-placeholder: #6E6E73;
 }

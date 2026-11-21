@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="flex items-center justify-center gap-4 cursor-pointer transition-[background-color] rounded-2xl w-full px-8 py-6 font-semibold" :class="variants[variant]" @click="emit('click')">
+    <button :type class="flex items-center justify-center gap-4 cursor-pointer transition-[background-color] rounded-2xl w-full px-8 py-6 font-semibold" :class="variants[variant]" @click="emit('click')">
         <BaseIcon v-if="icon" :name="icon" size="md" />
         <span>{{ text }}</span>
     </button>
@@ -14,10 +14,11 @@ type ButtonVariant =
     'primary'
     | 'secondary';
 
-const { variant = 'primary' } = defineProps<{
+const { variant = 'primary', type = 'button' } = defineProps<{
     text: string;
     icon?: IconName;
     variant?: ButtonVariant;
+    type?: 'button' | 'submit';
 }>();
 
 const emit = defineEmits<(e: 'click') => void>();

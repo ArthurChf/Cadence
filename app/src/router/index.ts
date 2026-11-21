@@ -21,6 +21,15 @@ const router = createRouter({
                 layout: AppLayout
             }
         },
+        ...import.meta.env.DEV
+            ? [{
+                path: Route.TEST,
+                component: async () => import('#/views/Test.vue'),
+                meta: {
+                    layout: AppLayout
+                }
+            }]
+            : [],
         {
             path: '/:pathMatch(.*)',
             redirect: Route.TODAY
