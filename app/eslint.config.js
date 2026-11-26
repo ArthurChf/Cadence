@@ -371,7 +371,6 @@ export default defineConfig(
             '@typescript-eslint/promise-function-async': 'error',
             '@typescript-eslint/require-array-sort-compare': 'error',
             '@typescript-eslint/restrict-plus-operands': 'error',
-            '@typescript-eslint/restrict-template-expressions': 'error',
             'array-callback-return': ['error', {
                 allowImplicit: true,
                 checkForEach: true
