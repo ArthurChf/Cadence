@@ -1,37 +1,76 @@
 {
-    "pages": {
-        "today": {
-            "title": "Aujourd'hui",
-            "actions": {
-                "startSession": "Démarrer la séance"
-            }
-        },
-        "program": {
-            "title": "Programme",
-            "card": {
-                "rest": "Repos",
-                "assign": "Assigner",
-                "nbExercises": "Aucun exercice | {n} exercice | {n} exercices"
-            },
-            "createSession": "Créer une séance"
-        },
-        "progress": {
-            "title": "Progression"
-        },
-        "settings": {
-            "title": "Réglages"
+    "today": {
+        "title": "Aujourd'hui",
+        "actions": {
+            "startSession": "Démarrer la séance"
         }
     },
+    "program": {
+        "title": "Programme",
+        "card": {
+            "rest": "Repos",
+            "assign": "Assigner"
+        },
+        "actions": {
+            "createSession": "Créer une séance"
+        },
+        "createSession": {
+            "title": "Nouvelle séance",
+            "startingPoint": "Point de départ",
+            "startingPointOptions": {
+                "scratch": {
+                    "title": "Partir de zéro",
+                    "description": "Tu choisis les exercices juste après"
+                },
+                "duplicate": {
+                    "title": "Dupliquer une séance",
+                    "description": "Copie ses exercices et leurs réglages",
+                    "choiceTitleEmpty": "Choisir la séance à dupliquer",
+                    "choiceSubtitleEmpty": "{n} séance disponible | {n} séances disponibles"
+                }
+            }
+        },
+        "dayPicker": {
+            "legend": "• Déjà occupé",
+            "summaryLine": "{day} : la séance \"{session}\" sera remplacée.",
+            "summaryNoDay": "Sans jour, la séance doit être assignée depuis le programme."
+        },
+        "duplicateSessionSheet": {
+            "title": "Séance à dupliquer"
+        }
+    },
+    "progress": {
+        "title": "Progression"
+    },
+    "settings": {
+        "title": "Réglages"
+    },
     "common": {
-        "day": {
+        "days": {
             "1": "Lundi",
             "2": "Mardi",
             "3": "Mercredi",
             "4": "Jeudi",
             "5": "Vendredi",
             "6": "Samedi",
-            "7": "Dimanche"
+            "7": "Dimanche",
+            "title": "Jours"
         },
-        "today": "Aujourd'hui"
+        "dayInitials": {
+            "1": "L",
+            "2": "M",
+            "3": "M",
+            "4": "J",
+            "5": "V",
+            "6": "S",
+            "7": "D"
+        },
+        "today": "Aujourd'hui",
+        "actions": {
+            "create": "Créer",
+            "duplicate": "Dupliquer"
+        },
+        "exercisesCount": "Aucun exercice | {n} exercice | {n} exercices",
+        "change": "Changer"
     }
 }

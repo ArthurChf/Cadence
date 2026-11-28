@@ -47,3 +47,51 @@
         opacity: 0;
     }
 }
+
+/***************************** PAGE PUSH / POP *****************************/
+/* The deeper page slides over the shallower one, which shifts slightly aside and dims (parallax) */
+
+.slide-push-enter-active,
+.slide-push-leave-active,
+.slide-pop-enter-active,
+.slide-pop-leave-active {
+    transition:
+        transform var(--transition-enter-duration) var(--transition-ease),
+        opacity var(--transition-enter-duration) var(--transition-ease);
+    pointer-events: none;
+}
+
+/* The deeper page is always drawn on top, and opaque to hide the page below */
+.slide-push-enter-active,
+.slide-pop-leave-active {
+    z-index: 1;
+    background-color: var(--color-background);
+}
+
+.slide-push-enter-from,
+.slide-pop-leave-to {
+    transform: translateX(100%);
+}
+
+.slide-push-leave-to,
+.slide-pop-enter-from {
+    transform: translateX(-30%);
+    opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide-push-enter-active,
+    .slide-push-leave-active,
+    .slide-pop-enter-active,
+    .slide-pop-leave-active {
+        transition-property: opacity;
+    }
+
+    .slide-push-enter-from,
+    .slide-push-leave-to,
+    .slide-pop-enter-from,
+    .slide-pop-leave-to {
+        transform: none;
+        opacity: 0;
+    }
+}

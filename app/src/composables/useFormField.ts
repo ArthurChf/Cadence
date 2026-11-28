@@ -1,25 +1,26 @@
-import { translateValidationMessage } from '#/utils/validation';
-import type { InjectionKey, MaybeRefOrGetter } from 'vue';
+import { translateValidationIssue } from '#/utils/validation';
+import type { ValidationIssue } from '#shared/validation/message';
+import type { ComputedRef, InjectionKey, Ref } from 'vue';
 import { computed, inject, toValue, watchEffect } from 'vue';
 
 export type FormField = {
     $value: unknown;
-    readonly $errors: string[];
+    /** Raw schema issues: unlike `$errors`, they keep the message params. */
+    readonly $issues: ValidationIssue[];
 };
 
-export type FormContext = {
+type FormContext = {
     getField(name: string): FormField | undefined;
+};
+
+type FieldBinding<T> = {
+    value: Ref<T>;
+    error: ComputedRef<string>;
 };
 
 export const formContextKey: InjectionKey<FormContext> = Symbol('FormContext');
 
-export function useFormField<T>(name: MaybeRefOrGetter<string>) {
-    const form = inject(formContextKey);
-
-    if (!form) {
-        throw new Error('useFormField() must be used inside a <BaseForm>.');
-    }
-
+function bindFormField<T>(form: FormContext, name: () => string): FieldBinding<T> {
     const field = computed(() => form.getField(toValue(name)));
 
     if (import.meta.env.DEV) {
@@ -40,8 +41,39 @@ export function useFormField<T>(name: MaybeRefOrGetter<string>) {
     });
 
     const error = computed(() => {
-        return translateValidationMessage(field.value?.$errors?.[0] ?? '');
+        return translateValidationIssue(field.value?.$issues?.[0]);
     });
 
     return { value, error };
+}
+
+/**
+ * Binds a component to a field of the parent <BaseForm>.
+ * Use it for components that only make sense inside a form.
+ */
+export function useFormField<T>(name: () => string): FieldBinding<T> {
+    const form = inject(formContextKey, null);
+
+    if (!form) {
+        throw new Error('useFormField() must be used inside a <BaseForm>.');
+    }
+
+    return bindFormField<T>(form, name);
+}
+
+/**
+ * Binds a component to a field of the parent <BaseForm> when there is one and a name is given.
+ * Otherwise, uses `fallback` (usually the component's v-model) and never reports an error.
+ */
+export function useOptionalFormField<T>(name: () => string | undefined, fallback: Ref<T>): FieldBinding<T> {
+    const form = inject(formContextKey, null);
+
+    if (form && toValue(name)) {
+        return bindFormField<T>(form, () => toValue(name) ?? '');
+    }
+
+    return {
+        value: fallback,
+        error: computed(() => '')
+    };
 }

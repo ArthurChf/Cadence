@@ -1,10 +1,20 @@
 <template>
-    <h1 class="font-normal">{{ t('pages.today.title') }}</h1>
-    <BaseButton :text="t('pages.today.actions.startSession')" />
+    <Page>
+        <template #header>
+            <PageHeader :title="t('today.title')" />
+        </template>
+
+        <div>
+            <BaseButton :text="t('today.actions.startSession')" />
+        </div>
+    </Page>
 </template>
 
 <script setup lang="ts">
 import BaseButton from '#/components/base/BaseButton.vue';
+import Page from '#/components/Page.vue';
+import PageHeader from '#/components/PageHeader.vue';
+
 import { useTranslation } from '#/composables/useTranslation';
 
 const { t } = useTranslation();

@@ -1,6 +1,6 @@
 <template>
     <Teleport to="body">
-        <Transition name="fade">
+        <Transition name="fade" @afterLeave="$emit('close')">
             <div v-if="isOpen" class="fixed inset-0 touch-none" @click="close()">
                 <div
                     class="h-full bg-background/40 will-change-[opacity]"
@@ -42,6 +42,9 @@
                     <div class="flex-1 overflow-y-auto px-9 my-5 text-bottom-sheet-fg">
                         <slot name="content" />
                     </div>
+                    <div class="flex items-center justify-center p-5 border-t border-bottom-sheet-footer-border">
+                        <slot name="footer" />
+                    </div>
                     <!--
                         Takes the place of the part pushed below the screen, so the scroll area ends at the screen edge.
                         Sized from the resting detent (not the live drag) to avoid a layout on every frame.
@@ -63,6 +66,8 @@ type Detent = 'md' | 'lg';
 const props = defineProps<{
     detent: Detent;
 }>();
+
+defineEmits<(e: 'close') => void>();
 
 const isOpen = defineModel<boolean>('open', { required: true });
 

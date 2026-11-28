@@ -1,0 +1,11 @@
+{
+    "required": "This field is required",
+    "invalid": "Invalid value",
+    "tooShort": "At least {minimum} character | At least {minimum} characters",
+    "tooLong": "At most {maximum} character | At most {maximum} characters",
+    "tooSmall": "Must be at least {minimum}",
+    "tooBig": "Must be at most {maximum}",
+    "tooFewItems": "Select at least {minimum} item | Select at least {minimum} items",
+    "tooManyItems": "Select at most {maximum} item | Select at most {maximum} items",
+    "selectionRequired": "Select an option"
+}

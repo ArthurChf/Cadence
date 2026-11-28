@@ -1,39 +1,33 @@
-const validationMessageKeys = [
-    'required'
-] as const;
+import type validationMessages from '#shared/locales/en/validation.json';
 
-type ValidationMessageKey = typeof validationMessageKeys[number];
-type ValidationMessageParams = Record<string, string | number>;
+/** Keys of the validation messages. `en` is the reference locale. */
+export type ValidationMessageName = keyof typeof validationMessages;
 
-type ValidationMessage = {
-    key: ValidationMessageKey;
-    params?: ValidationMessageParams;
+/** Full i18n key of a validation message, as stored in an issue's `message`. */
+export type ValidationMessageKey = `validation.${ValidationMessageName}`;
+
+/**
+ * The parts of a schema issue needed to translate it.
+ * The message is an i18n key, the other fields are its interpolation params.
+ */
+export type ValidationIssue = {
+    message: string;
+    minimum?: number | bigint;
+    maximum?: number | bigint;
+    /** Custom params, set with `.refine(check, { error, params })`. */
+    params?: Record<string, unknown>;
 };
 
-function isValidationMessage(value: unknown): value is ValidationMessage {
-    return typeof value === 'object'
-        && value !== null
-        && 'key' in value
-        && typeof value.key === 'string'
-        && (validationMessageKeys).includes(value.key as ValidationMessageKey);
+/** Returns the i18n key of a validation message, with autocompletion. */
+export function validationMessage(name: ValidationMessageName): ValidationMessageKey {
+    return `validation.${name}`;
 }
 
-function encodeValidationMessage(key: ValidationMessageKey, params?: ValidationMessageParams) {
-    const message: ValidationMessage = params ? { key, params } : { key };
-
-    return JSON.stringify(message);
+/** Returns the interpolation params of an issue, e.g. `{ minimum: 5 }` for `{minimum}` in a message. */
+export function getValidationParams(issue: ValidationIssue): Record<string, unknown> {
+    return {
+        ...issue.params,
+        ...(issue.minimum !== undefined && { minimum: Number(issue.minimum) }),
+        ...(issue.maximum !== undefined && { maximum: Number(issue.maximum) })
+    };
 }
-
-function decodeValidationMessage(raw: string) {
-    try {
-        const parsed: unknown = JSON.parse(raw);
-
-        return isValidationMessage(parsed) ? parsed : null;
-    } catch {
-        return null;
-    }
-}
-
-export {
-    decodeValidationMessage, encodeValidationMessage
-};

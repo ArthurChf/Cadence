@@ -27,6 +27,9 @@
     --color-secondary: #2A2A2D;
     --color-secondary-active: #37373b;
 
+    --color-header-previous-title: #5B9BFF;
+    --color-header-previous-title-focus: #3179fd;
+
     --color-nav-border: #191919;
     --color-nav-item: #989aae;
     --color-nav-item-label-active: var(--color-foreground);
@@ -42,10 +45,45 @@
     --color-card-day-bg: #2A2A2D;
     --color-card-day-bg-active: #141415;
     --color-card-day-fg: #A1A1A6;
+    --color-card-duplicate-icon: #5B9BFF;
+    --color-card-duplicate-icon-bg: #2A2A2D;
+    --color-card-duplicate-action: #5B9BFF;
 
     --color-bottom-sheet-bg: #1C1C1E;
     --color-bottom-sheet-fg: #A1A1A6;
     --color-bottom-sheet-close-bg: #2A2A2D;
     --color-bottom-sheet-close-bg-active: #39393d;
     --color-bottom-sheet-grabber: #3A3A3E;
+    --color-bottom-sheet-footer-border: #3A3A3E;
+
+    --color-input-bg: #2A2A2D;
+    --color-input-fg: #F5F5F7;
+    --color-input-border: #3A3A3E;
+
+    --color-label-fg: #8E8E93;
+
+    --color-radio-card-bg: #2A2A2D;
+    --color-radio-card-bg-active: #323235;
+    --color-radio-card-bg-checked: #17336A;
+    --color-radio-card-fg: #A1A1A6;
+    --color-radio-card-fg-checked: #C7D6F7;
+    --color-radio-card-title-fg: #F5F5F7;
+    --color-radio-card-title-fg-checked: #FFFFFF;
+    --color-radio-card-indicator: #8E8E93;
+    --color-radio-card-indicator-checked: #276CF0;
+    --color-radio-card-indicator-check: #FFFFFF;
+
+    --color-button-fg: #E3E6FC;
+
+    --color-day-picker-day-dot: #8E8E93;
+    --color-day-picker-day-active-dot: #F5F5F7;
+    --color-day-picker-day-bg: #323234;
+    --color-day-picker-day-bg-focus: #3B3B3D;
+    --color-day-picker-day-bg-active: #276CF0;
+    --color-day-picker-day-bg-active-focus: #3179fd;
+    --color-day-picker-day-fg: #F5F5F7;
+    --color-day-picker-day-occupied-bg-active: #C76237;
+    --color-day-picker-day-occupied-bg-active-focus: #d2734a;
+    --color-day-picker-summary-alert-fg: #C76237;
+    --color-day-picker-summary-fg: #A1A1A6;
 }

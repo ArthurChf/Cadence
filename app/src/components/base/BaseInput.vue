@@ -10,11 +10,12 @@
             :class="error ? 'border-danger ring-danger' : 'border-input-border'"
             autocomplete="off"
         />
-        <p v-if="error" class="text-sm text-danger">{{ error }}</p>
+        <BaseFieldError :name />
     </div>
 </template>
 
 <script setup lang="ts">
+import BaseFieldError from '#/components/base/BaseFieldError.vue';
 import BaseLabel from '#/components/base/BaseLabel.vue';
 import { useFormField } from '#/composables/useFormField';
 import { useId } from 'vue';

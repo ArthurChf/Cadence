@@ -1,37 +1,76 @@
 {
-    "pages": {
-        "today": {
-            "title": "Today",
-            "actions": {
-                "startSession": "Start the session"
-            }
-        },
-        "program": {
-            "title": "Program",
-            "card": {
-                "rest": "Rest",
-                "assign": "Assign",
-                "nbExercises": "No exercise | {n} exercise | {n} exercises"
-            },
-            "createSession": "Create session"
-        },
-        "progress": {
-            "title": "Progress"
-        },
-        "settings": {
-            "title": "Settings"
+    "today": {
+        "title": "Today",
+        "actions": {
+            "startSession": "Start the session"
         }
     },
+    "program": {
+        "title": "Program",
+        "card": {
+            "rest": "Rest",
+            "assign": "Assign"
+        },
+        "actions": {
+            "createSession": "Create session"
+        },
+        "createSession": {
+            "title": "New session",
+            "startingPoint": "Starting point",
+            "startingPointOptions": {
+                "scratch": {
+                    "title": "Start from scratch",
+                    "description": "You pick the exercises right after"
+                },
+                "duplicate": {
+                    "title": "Duplicate a session",
+                    "description": "Copies its exercises and their settings",
+                    "choiceTitleEmpty": "Select the session to duplicate",
+                    "choiceSubtitleEmpty": "{n} session available | {n} sessions available"
+                }
+            }
+        },
+        "dayPicker": {
+            "legend": "• Already occupied",
+            "summaryLine": "{day} : the \"{session}\" session will be replaced.",
+            "summaryNoDay": "With no date set, the session must be scheduled through the program."
+        },
+        "duplicateSessionSheet": {
+            "title": "Session to duplicate"
+        }
+    },
+    "progress": {
+        "title": "Progress"
+    },
+    "settings": {
+        "title": "Settings"
+    },
     "common": {
-        "day": {
+        "days": {
             "1": "Monday",
             "2": "Tuesday",
             "3": "Wednesday",
             "4": "Thursday",
             "5": "Friday",
             "6": "Saturday",
-            "7": "Sunday"
+            "7": "Sunday",
+            "title": "Days"
         },
-        "today": "Today"
+        "dayInitials": {
+            "1": "M",
+            "2": "T",
+            "3": "W",
+            "4": "T",
+            "5": "F",
+            "6": "S",
+            "7": "S"
+        },
+        "today": "Today",
+        "actions": {
+            "create": "Create",
+            "duplicate": "Duplicate"
+        },
+        "exercisesCount": "No exercise | {n} exercise | {n} exercises",
+        "change": "Change"
     }
 }

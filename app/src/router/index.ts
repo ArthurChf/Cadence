@@ -1,6 +1,8 @@
 import { Route } from '#/enums/Route';
-import AppLayout from '#/layouts/AppLayout.vue';
-import Program from '#/views/Program.vue';
+import FocusLayout from '#/layouts/FocusLayout.vue';
+import NavLayout from '#/layouts/NavLayout.vue';
+import CreatePlannedSession from '#/views/program/CreatePlannedSession.vue';
+import Program from '#/views/program/Program.vue';
 import Today from '#/views/Today.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -9,17 +11,18 @@ const router = createRouter({
     routes: [
         {
             path: Route.TODAY,
-            component: Today,
-            meta: {
-                layout: AppLayout
-            }
+            component: NavLayout,
+            children: [
+                { path: Route.TODAY, component: Today },
+                { path: Route.PROGRAM, component: Program }
+            ]
         },
         {
-            path: Route.PROGRAM,
-            component: Program,
-            meta: {
-                layout: AppLayout
-            }
+            path: Route.TODAY,
+            component: FocusLayout,
+            children: [
+                { path: Route.PROGRAM_CREATE_PLANNED_SESSION, component: CreatePlannedSession }
+            ]
         },
         {
             path: '/:pathMatch(.*)',
@@ -28,8 +31,26 @@ const router = createRouter({
     ]
 });
 
-router.beforeEach(async (to, from) => {
-    return true;
+function getPathDepth(path: string) {
+    return path.split('/').filter(Boolean).length;
+}
+
+/**
+ * Mobile-like navigation: going deeper in the path pushes the new page from the right,
+ * going back up pops it. Pages at the same depth (bottom nav tabs) swap instantly.
+ */
+router.afterEach((to, from, failure) => {
+    if (failure) return;
+
+    const isInitialNavigation = from.matched.length === 0;
+    const toDepth = getPathDepth(to.path);
+    const fromDepth = getPathDepth(from.path);
+
+    if (isInitialNavigation || toDepth === fromDepth) {
+        to.meta.transition = undefined;
+    } else {
+        to.meta.transition = toDepth > fromDepth ? 'slide-push' : 'slide-pop';
+    }
 });
 
 export default router;

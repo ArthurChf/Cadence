@@ -30,12 +30,14 @@
     --border: 0.1rem;
 
     --size-*: initial;
+    --size-2xs: 1.6rem;
     --size-xs: 1.8rem;
     --size-sm: 2rem;
     --size-md: 2.2rem;
     --size-lg: 3rem;
     --size-xl: 3.8rem;
 
+    --width-2xs: 7rem;
     --width-xs: 10rem;
     --width-sm: 13rem;
     --width-md: 16rem;

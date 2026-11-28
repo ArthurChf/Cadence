@@ -1,5 +1,8 @@
+import type { PlannedSession } from '#/types/program';
+
 export type Size =
-    'xs'
+    '2xs'
+    | 'xs'
     | 'sm'
     | 'md'
     | 'lg'
@@ -12,4 +15,13 @@ export type IconName =
     | 'settings'
     | 'chevron-right'
     | 'plus'
-    | 'x';
+    | 'x'
+    | 'check'
+    | 'chevron-left'
+    | 'copy-check';
+
+export type SessionToDuplicate = {
+    id: PlannedSession['id'];
+    name: PlannedSession['name'];
+    exercisesCount: number;
+};

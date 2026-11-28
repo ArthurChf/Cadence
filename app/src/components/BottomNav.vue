@@ -16,12 +16,12 @@
 </template>
 
 <script setup lang="ts">
+import BaseIcon from '#/components/base/BaseIcon.vue';
 import { useTranslation } from '#/composables/useTranslation';
 import type { RouteType } from '#/enums/Route';
 import type { IconName } from '#/types/ui';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import BaseIcon from './base/BaseIcon.vue';
 
 const { t } = useTranslation();
 
@@ -38,23 +38,23 @@ const navItems = computed<NavItem[]>(() => [
     {
         route: '/today',
         icon: 'dumbbell',
-        label: t('pages.today.title')
+        label: t('today.title')
     },
     {
         route: '/program',
         icon: 'calendar-days',
-        label: t('pages.program.title')
+        label: t('program.title')
     },
     {
         route: '/progress',
         icon: 'chart-column',
-        label: t('pages.progress.title'),
+        label: t('progress.title'),
         disabled: true
     },
     {
         route: '/settings',
         icon: 'settings',
-        label: t('pages.settings.title'),
+        label: t('settings.title'),
         disabled: true
     }
 ]);

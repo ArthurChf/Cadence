@@ -24,7 +24,9 @@ const { r$ } = useRegleSchema(state, toRef(() => schema as StandardSchemaV1));
 
 provide(formContextKey, {
     getField: (name: string) => {
-        return r$.$fields[name] as FormField | undefined;
+        // The schema is generic here, so Regle can't type the field: every field bound by name is a single field,
+        // and Regle copies the raw schema issue (message + params) into its `$issues`.
+        return r$.$fields[name] as unknown as FormField | undefined;
     }
 });
 
